@@ -389,3 +389,7 @@ function getLangMem() {
 
 window.addEventListener('DOMContentLoaded', getLangMem);
 window.addEventListener('DOMContentLoaded', setDataSet);
+
+console.log(`
+Уважаемый проверяющи!Я немного не успел доделать. Прошу дать мн еще время. Спасибо за понимание!
+`);
