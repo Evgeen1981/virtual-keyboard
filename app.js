@@ -375,9 +375,12 @@ function setLetter(KEYBOARD) {
   let letter = '';
 
   KEYBOARD.addEventListener('click', (event) => {
-    if (event.target.classList.contains('keyboard__key') && event.target.dataset.name.match(/[^Tab || Shift || CapsLock || Ctrl || MetaLeft || Space || Backspace || Delete || Enter || ArrowLeft || ArrowUp || ArrowRight || ArrowDown]/)) {
+    if (event.target.classList.contains('keyboard__key') && event.target.dataset.name.match(/[^Tab || Shift || CapsLock || Ctrl || MetaLeft || Space || Backspace || Delete || Enter]/)) {
       letter = event.target.textContent;
       document.querySelector('.textarea').value += letter;
+    }
+    if (event.target.dataset.name.match(/[Backspace]/)) {
+      document.querySelector('.textarea').value = document.querySelector('.textarea').value.substring(0, document.querySelector('.textarea').value - 1);
     }
   });
 }
@@ -389,7 +392,3 @@ function getLangMem() {
 
 window.addEventListener('DOMContentLoaded', getLangMem);
 window.addEventListener('DOMContentLoaded', setDataSet);
-
-console.log(`
-Уважаемый проверяющи!Я немного не успел доделать. Прошу дать мн еще время. Спасибо за понимание!
-`);
